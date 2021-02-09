@@ -5,7 +5,7 @@ class CreateUserMeds < ActiveRecord::Migration[6.0]
       t.string :time
       t.string :notes
       t.integer :pill_count
-      t.boolean :has_taken
+      t.boolean :has_taken, :default => false
       t.integer :user_id
       t.integer :med_id
 

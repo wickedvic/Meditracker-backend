@@ -13,6 +13,7 @@ class Api::V1::AuthController < ApplicationController
         render json: { message: 'Invalid username or password' }, status: :unauthorized
       end
     end
+   
 
     def createuser
       @user = User.find_by(email: user_login_params[:email])

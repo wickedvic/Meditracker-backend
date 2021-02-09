@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_165028) do
     t.string "time"
     t.string "notes"
     t.integer "pill_count"
-    t.boolean "has_taken"
+    t.boolean "has_taken", default: false
     t.integer "user_id"
     t.integer "med_id"
     t.datetime "created_at", precision: 6, null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_165028) do
     t.string "email"
     t.string "password_digest"
     t.integer "doctor_id"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

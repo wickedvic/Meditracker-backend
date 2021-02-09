@@ -5,7 +5,10 @@ Rails.application.routes.draw do
       get '/ptprofile', to: 'patients#profile'
       post '/login', to: 'auth#create'
       post '/patientlogin', to: 'auth#createuser'
-      
+      resources :doctors, only: [:show]
+      resources :users, only: [:show]
+      resources :user_meds, only: [:create, :update, :destroy]
+      resources :meds, only: [:index]
     end
   end
 end 

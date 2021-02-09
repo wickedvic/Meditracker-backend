@@ -8,14 +8,14 @@ require 'open-uri'
 require 'json'
 
 
-doc1 = Doctor.create(name: Faker::Name.unique.name, email: "vivek1019@gmail.com", password_digest: BCrypt::Password.create('pass123'))
-doc2 = Doctor.create(name: Faker::Name.unique.name, email: Faker::Internet.unique.email, password_digest: BCrypt::Password.create('pass123'))
-doc3 = Doctor.create(name: Faker::Name.unique.name, email: Faker::Internet.unique.email, password_digest: BCrypt::Password.create('pass123'))
+doc1 = Doctor.create!(name: Faker::Name.unique.name, email: "doc1@gmail.com", password_digest: BCrypt::Password.create('pass123'))
+doc2 = Doctor.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email, password_digest: BCrypt::Password.create('pass123'))
+doc3 = Doctor.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email, password_digest: BCrypt::Password.create('pass123'))
 
-
+User.create!(name: Faker::Name.unique.name, email: "pat1@gmail.com", image: Faker::Avatar.image, password_digest: BCrypt::Password.create('pass123'), doctor_id: [doc1.id, doc2.id, doc3.id].sample)
 
     30.times do 
-        User.create(name: Faker::Name.unique.name, email: Faker::Internet.unique.email, password_digest: BCrypt::Password.create('pass123'), doctor_id: [doc1.id, doc2.id, doc3.id].sample)
+        User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email, image: Faker::Avatar.image, password_digest: BCrypt::Password.create('pass123'), doctor_id: [doc1.id, doc2.id, doc3.id].sample)
     end
 
 

@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::API
+  before_action :authorized
+
     def encode_token(payload)
         # don't forget to hide your secret in an environment variable
         JWT.encode(payload, 'my_s3cr3t')
-      end
+    end
   
       def auth_header
         # { Authorization: 'Bearer <token>' }
@@ -25,7 +27,11 @@ class ApplicationController < ActionController::API
         if decoded_token
           user_id = decoded_token[0]['user_id']
           @user = Doctor.find_by(id: user_id)
-        end
+          if !@user
+              @user = User.find_by(id: user_id)
+          end
+          return @user
+        end 
       end
   
       def logged_in?
