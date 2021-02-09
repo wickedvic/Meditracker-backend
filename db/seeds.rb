@@ -1,6 +1,7 @@
 Doctor.destroy_all
 User.destroy_all
 Med.destroy_all
+UserMed.destroy_all
 
 require 'faker'
 require 'net/http'
@@ -37,5 +38,5 @@ def seed_meds
     end
 end
 
-
+seed_meds
 

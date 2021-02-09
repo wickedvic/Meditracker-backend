@@ -5,7 +5,7 @@ class Api::V1::DoctorsController < ApplicationController
     end
 
     def show
-        doctor = Doctor.find(params[:id])
-        render json: doctor, include: :users
+        @doctor = Doctor.find(params[:id])
+        render json: @doctor, include: :users
     end
 end 
