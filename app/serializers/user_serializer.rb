@@ -1,5 +1,5 @@
 class UserSerializer < ApplicationSerializer
-    attributes :id, :email, :name, :user_meds, :doctor, :image
+    attributes :id, :email, :name, :user_meds, :doctor
 
     def user_meds
         ActiveModel::SerializableResource.new(object.user_meds,  each_serializer: UserMedSerializer)
