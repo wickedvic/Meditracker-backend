@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      post "/signup", to: "users#create"
       get '/mdprofile', to: 'doctors#profile'
       get '/ptprofile', to: 'users#profile'
       post '/login', to: 'auth#create'
