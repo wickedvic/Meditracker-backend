@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       post '/patientlogin', to: 'auth#createuser'
       resources :doctors, only: [:show]
-      resources :users, only: [:show]
+      resources :users, only: [:show, :create, :update]
       resources :user_meds, only: [:create, :update, :destroy]
       resources :meds, only: [:index]
     end
