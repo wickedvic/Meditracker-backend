@@ -13,9 +13,10 @@ The application’s main goal should be to hit CRUD (CREATE, READ, UPDATE, DESTR
 
 Doctor Functionality:
 1. A doctor is able to prescribe medications to a patient. Medication data comes from RX-Image API 
-2. Sign up a new patient 
-3. Use a fully functional calendar tailored for them
-4. Make any notes and organize them by one of four colors
+2. A doctor can also go back and edit/delete any prescribed medications
+3. Sign up a new patient 
+4. Use a fully functional calendar tailored for them
+5. Make any notes and organize them by one of four colors
 
 
 Patient Functionality:
